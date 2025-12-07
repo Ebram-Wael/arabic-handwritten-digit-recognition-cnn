@@ -4,7 +4,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-dataset_dir = "../Data/dataset_split"
+dataset_dir = os.path.join(os.path.dirname(__file__), "..", "Data", "dataset_split")
 image_size = (28, 28)
 num_classes = 10
 
