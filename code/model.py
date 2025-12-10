@@ -31,5 +31,5 @@ def build_model(input_shape=(28, 28, 1), num_classes=10):
         loss='sparse_categorical_crossentropy',
         metrics=['accuracy']
     )
-
+    
     return model

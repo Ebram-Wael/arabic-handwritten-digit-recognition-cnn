@@ -42,8 +42,15 @@ def train_model(epochs=10, batch_size=32):
     return best_model, history
 
 if __name__ == "__main__":
+    import json
 
     EPOCHS = 20
     BATCH_SIZE = 64
 
     trained_model, training_history = train_model(epochs=EPOCHS, batch_size=BATCH_SIZE)
+
+    # Save the training history
+    history_path = os.path.join(os.path.dirname(__file__), "training_history.json")
+    with open(history_path, 'w') as f:
+        json.dump(training_history.history, f)
+    print(f"Training history saved to {history_path}")
